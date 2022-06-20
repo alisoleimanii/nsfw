@@ -31,11 +31,8 @@ class NSFW
         $sum = 0;
         foreach($data as $term => $item)
         {
-            
             $sum += $item * self::getCoefficient($term);
-            echo $item.PHP_EOL;
         }
-        echo "SUM: ".$sum .PHP_EOL;
         return $sum >= $sensitivity;
     }
 
