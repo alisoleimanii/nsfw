@@ -1,0 +1,22 @@
+{
+  "name": "alisoleimani/nsfw-detector",
+  "description": "nsfw detector php",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Aliakbar Soleimani",
+      "email": "alisoleimani.dev@gmail.com",
+      "role": "Maintainer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Alisoleimani\\Nsfw\\": "src/"
+    }
+  },
+  "keywords": ["nsfw php","nude detector php","porm detector php"],
+  "require": {
+    "ext-json": "*"
+  }
+}
