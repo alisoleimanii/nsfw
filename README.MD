@@ -32,11 +32,11 @@ $data = NSFW::predict($filePath);
 // The higher these values, the more likely the photo is to be unsafe
 ```
 
-#### Dont Panic! You can use detect method for a boolean value then say image is safe or not
+#### Don`t Panic! You can use detect method for a boolean value then say image is safe or not
 
 ```php
 $filePath = "path-to-file/file.png";
-$sitation = NSFW::detect($filePath);
+$situation = NSFW::detect($filePath);
 
 // if $sitation is true it means image is not safe and if its false image will be secure 
 ```
