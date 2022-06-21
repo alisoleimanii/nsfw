@@ -4,7 +4,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 from nsfw_detector import predict
 
 
-model = predict.load_model('model.h5')
+model = predict.load_model(sys.argv[3])
 
 # Predict single image
 res =  predict.classify(model, sys.argv[1]);

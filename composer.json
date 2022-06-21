@@ -12,7 +12,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Alisoleimani\\Nsfw\\": "src/"
+      "AliSoleimani\\": "src"
     }
   },
   "keywords": ["nsfw php","nude detector php","porm detector php"],

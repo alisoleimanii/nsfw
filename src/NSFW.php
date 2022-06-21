@@ -4,18 +4,20 @@ namespace AliSoleimani;
 
 class NSFW
 {
-    
-    protected function exec($file,$output = 'output.txt')
+
+    protected function exec($file)
     {
-        shell_exec("python ".__DIR__."/python/nude.py $file $output");
+        $base = __DIR__ . "/../";
+        $output = $base . "output.txt";
+        shell_exec("python " . $base . "python/nude.py $file $output " . $base . "python/model.h5");
         return $this->getOutput($output);
     }
 
     protected function getOutput($output)
     {
-        $data =  json_decode(str_replace("'",'"',file_get_contents($output)),true);
-    
-        foreach($data as $value)
+        $data = json_decode(str_replace("'", '"', file_get_contents($output)), true);
+
+        foreach ($data as $value)
             return $value;
     }
 
@@ -29,8 +31,7 @@ class NSFW
     {
         $data = self::predict($file);
         $sum = 0;
-        foreach($data as $term => $item)
-        {
+        foreach ($data as $term => $item) {
             $sum += $item * self::getCoefficient($term);
         }
         return $sum >= $sensitivity;
@@ -38,6 +39,6 @@ class NSFW
 
     protected static function getCoefficient($term)
     {
-        return ['drawings' => 1,'hentai' => 1,'neutral' => 0.5,'porn' => 1.1,'sexy' => 1.1][$term];
+        return ['drawings' => 1, 'hentai' => 1, 'neutral' => 0.5, 'porn' => 1.1, 'sexy' => 1.1][$term];
     }
 }
