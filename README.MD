@@ -9,7 +9,7 @@ NSFW (Not Safe for Work) Detector actually is a python script but its integrated
 ### Python Installation
 
 ```bash
-    pip install tensorflow
+    pip install --upgrade TensorFlow
     pip install nsfw-detector
 ```
 
